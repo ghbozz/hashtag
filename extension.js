@@ -9,19 +9,24 @@ const vscode = require('vscode');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
+  // Use the console to output diagnostic information (console.log) and errors (console.error)
+  // This line of code will only be executed once when your extension is activated
+  // console.log('Congratulations, your extension "hashtag" is now active!');
+
   vscode.commands.registerCommand('type', (args) => {
-    if (args.text === '#') {
+    const editor = vscode.window.activeTextEditor;
+
+    if (args.text === '#' && editor.document.languageId === 'ruby') {
       return vscode.commands
         .executeCommand('default:type', { text: '#{}' })
         .then(() => {
-          setPosition();
+          setPosition(editor);
         });
     }
     return vscode.commands.executeCommand('default:type', args);
   });
 
-  const setPosition = () => {
-    const editor = vscode.window.activeTextEditor;
+  const setPosition = (editor) => {
     const position = editor.selection.active;
     const newPosition = position.with(position.line, position.character - 1);
     editor.selection = new vscode.Selection(newPosition, newPosition);

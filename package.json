@@ -1,8 +1,9 @@
 {
   "name": "hashtag",
 	"displayName": "#{ruby}",
-	"description": "",
+	"description": "Ruby Interpolation Autocomplete",
 	"version": "0.0.1",
+	"publisher": "ghbozz",
 	"engines": {
 		"vscode": "^1.55.0"
 	},
@@ -14,11 +15,6 @@
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [{
-            "command": "hashtag.helloWorld",
-            "title": "Hello World"
-
-		}]
 	},
 	"scripts": {
 		"lint": "eslint .",
