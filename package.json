@@ -4,6 +4,7 @@
 	"description": "Ruby Interpolation Autocomplete",
 	"version": "0.0.1",
 	"publisher": "ghbozz",
+	"repository": "https://github.com/ghbozz/hashtag",
 	"engines": {
 		"vscode": "^1.55.0"
 	},
