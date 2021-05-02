@@ -5,6 +5,8 @@
 	"version": "0.0.1",
 	"publisher": "ghbozz",
 	"repository": "https://github.com/ghbozz/hashtag",
+	"icon": "icon.png",
+	"keywords": ["ruby", "interpolation", "string"],
 	"engines": {
 		"vscode": "^1.55.0"
 	},
