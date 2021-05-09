@@ -33,13 +33,16 @@ function activate(context) {
   };
 
   const shouldInterpolate = (editor, args) => {
-    inString(editor);
+    inString(editor); // WIP
     return editor.document.languageId === 'ruby' && args.text === '#';
   };
 
   const inString = (editor) => {
+    // text = text value of active line
     const { text } = editor.document.lineAt(editor.selection.active.line);
+    // character = index value of cursor position
     const { character } = editor.selection.active;
+
     return true;
   };
 }
