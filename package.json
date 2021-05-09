@@ -1,8 +1,8 @@
 {
-  "name": "hashtag",
+  "name": "hashtag-ruby",
 	"displayName": "#{ruby}",
 	"description": "Ruby Interpolation Autocomplete",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"publisher": "ghbozz",
 	"repository": "https://github.com/ghbozz/hashtag",
 	"icon": "icon.png",
@@ -11,10 +11,11 @@
 		"vscode": "^1.55.0"
 	},
 	"categories": [
-		"Other"
+		"Formatters", 
+		"Keymaps"
 	],
 	"activationEvents": [
-        "onLanguage:ruby"
+    "onLanguage:ruby"
 	],
 	"main": "./extension.js",
 	"contributes": {
