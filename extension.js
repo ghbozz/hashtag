@@ -16,7 +16,7 @@ function activate(context) {
   vscode.commands.registerCommand('type', (args) => {
     const editor = vscode.window.activeTextEditor;
 
-    if (args.text === '#' && editor.document.languageId === 'ruby') {
+    if (shouldInterpolate(editor, args)) {
       return vscode.commands
         .executeCommand('default:type', { text: '#{}' })
         .then(() => {
@@ -30,6 +30,17 @@ function activate(context) {
     const position = editor.selection.active;
     const newPosition = position.with(position.line, position.character - 1);
     editor.selection = new vscode.Selection(newPosition, newPosition);
+  };
+
+  const shouldInterpolate = (editor, args) => {
+    startOfLine(editor);
+    return editor.document.languageId === 'ruby' && args.text === '#';
+  };
+
+  const startOfLine = (editor) => {
+    const { text } = editor.document.lineAt(editor.selection.active.line);
+    const { character } = editor.selection.active;
+    return true;
   };
 }
 
