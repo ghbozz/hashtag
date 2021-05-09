@@ -45,7 +45,6 @@ function activate(context) {
   };
 
   const autocomplete = (editor, args) => {
-    // console.log(editor.edit);
     editor.edit((builder) => {
       builder.replace(editor.selection, '{}');
     });
