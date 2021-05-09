@@ -1,5 +1,5 @@
 {
-  "name": "hashtag-ruby",
+  "name": "hashtag",
 	"displayName": "#{ruby}",
 	"description": "Ruby Interpolation Autocomplete",
 	"version": "0.0.3",
