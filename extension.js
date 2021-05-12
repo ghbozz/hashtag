@@ -18,9 +18,10 @@ function activate(context) {
     const editor = vscode.window.activeTextEditor;
 
     ruby = editor.document.languageId === 'ruby';
+    erb = editor.document.languageId === 'erb';
     hashtag = args.text === '#';
 
-    if (ruby && hashtag) {
+    if ((ruby || erb) && hashtag) {
       return vscode.commands.executeCommand('default:type', args).then(() => {
         if (isInString(editor)) autocomplete(editor, args);
       });

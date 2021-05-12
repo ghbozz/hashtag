@@ -2,19 +2,21 @@
   "name": "hashtag",
 	"displayName": "#{ruby}",
 	"description": "Ruby Interpolation Autocomplete",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "ghbozz",
 	"repository": "https://github.com/ghbozz/hashtag",
 	"icon": "icon.png",
-	"keywords": ["ruby", "interpolation", "string"],
+	"keywords": ["ruby", "erb", "keybindings", "interpolation", "string"],
 	"engines": {
 		"vscode": "^1.55.0"
 	},
 	"categories": [
-		"Other"
+		"Formatters",
+		"Keymaps"
 	],
 	"activationEvents": [
-        "onLanguage:ruby"
+        "onLanguage:ruby",
+        "onLanguage:erb"
 	],
 	"main": "./extension.js",
 	"contributes": {
