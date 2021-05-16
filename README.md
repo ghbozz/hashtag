@@ -4,6 +4,6 @@ A dead simple extension to autocomplete string interpolation in ```.rb``` & ```.
 
 ## Features
 
-In a ```ruby``` or ```erb``` file, this extension will autocomplete ```"#" with curly brackets
+In a ```ruby``` or ```erb``` file, this extension will autocomplete ```"#"``` with curly brackets
 
 **Enjoy!**
