@@ -1,9 +1,9 @@
-# hashtag README
+# Hashtag #{ruby} README
 
-A dead simple extension to autocomplete string interpolation in .rb files
+A dead simple extension to autocomplete string interpolation in ```.rb``` & ```.erb``` files
 
 ## Features
 
-In a ruby file, this extension will autocomplete "#" with curly brackets
+In a ```ruby``` or ```erb``` file, this extension will autocomplete "#" with curly brackets
 
 **Enjoy!**
