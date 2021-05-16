@@ -22,8 +22,10 @@ function activate(context) {
     const hashtag = args.text === '#';
 
     if ((ruby || erb) && hashtag) {
+      const selection = getSelection(editor);
+
       return vscode.commands.executeCommand('default:type', args).then(() => {
-        if (isInString(editor)) autocomplete(editor, args);
+        if (isInString(editor)) autocomplete(editor, selection);
       });
     }
     return vscode.commands.executeCommand('default:type', args);
@@ -45,18 +47,30 @@ function activate(context) {
     return quotes[0] % 2 === 1 && quotes[1] % 2 === 1;
   };
 
-  const autocomplete = (editor, args) => {
-    editor.edit((builder) => {
-      builder.replace(editor.selection, '{}');
-    });
+  const getSelection = (editor) => {
+    const { text } = editor.document.lineAt(editor.selection.active.line);
+    const start = editor.selection.start.character;
+    const end = editor.selection.end.character;
 
-    cursor(editor);
+    return text.substring(start, end);
   };
 
-  const cursor = (editor) => {
+  const autocomplete = (editor, selection) => {
+    editor.edit((builder) => {
+      builder.replace(editor.selection, `{${selection}}`);
+    });
+
+    cursor(editor, selection.length);
+  };
+
+  const cursor = (editor, offset = 0) => {
     const position = editor.selection.active;
-    const offset = position.with(position.line, position.character + 1);
-    editor.selection = new vscode.Selection(offset, offset);
+    const move = position.with(
+      position.line,
+      position.character + (offset + 1)
+    );
+
+    editor.selection = new vscode.Selection(move, move);
   };
 }
 
