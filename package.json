@@ -6,7 +6,7 @@
 	"publisher": "ghbozz",
 	"repository": "https://github.com/ghbozz/hashtag",
 	"icon": "icon.png",
-	"keywords": ["ruby", "erb", "keybindings", "interpolation", "string"],
+	"keywords": ["ruby", "erb", "keybindings", "interpolation", "string", "barcket"],
 	"engines": {
 		"vscode": "^1.55.0"
 	},
